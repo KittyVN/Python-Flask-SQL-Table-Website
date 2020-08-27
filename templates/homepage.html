@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Übersicht</h1>
+    <form>
+        <input  class="button" type="button" value="Kundenliste anzeigen" onclick="window.location.href='/kunden'" />
+        <br/><br/>
+        <input  class="button" type="button" value="Neuen Kunden anlegen" onclick="window.location.href='/neuerKunde'" />
+        <br/><br/>
+    </form>
+    <br/><br/>
+    <form>
+        <input  class="button" type="button" value="Produktliste anzeigen" onclick="window.location.href='/produkte'" />
+        <br/><br/>
+        <input  class="button" type="button" value="Neues Produkt anlegen" onclick="window.location.href='/neuesProdukt'" />
+        <br/><br/>
+    </form>
+    <br/><br/>
+    <form>
+        <input  class="button" type="button" value="Bestellungen anzeigen" onclick="window.location.href='/bestellungen'" />
+        <br/><br/>
+        <input  class="button" type="button" value="Neue Bestellung anlegen" onclick="window.location.href='/neueBestellung'" />
+    </form>
+</div>
+</body>
+</html>

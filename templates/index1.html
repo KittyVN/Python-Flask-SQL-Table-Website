@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neuer Nutzer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Datenset bearbeiten</h1>
+<form action="/kunden" method="post">
+    <label for="ID">ID: </label><br/>
+    <input type="text" id="ID" name="ID" value={{kundenID}} readonly/>
+    <br/>
+    <br/>
+    <label for="vorname">Vorname: </label><br/>
+    <input type="text" id="vorname" name="vorname" value={{kundenVorname}} required/>
+    <br/>
+    <br/>
+    <label for="nachname">Nachname: </label><br/>
+    <input type="text" id="nachname" name="nachname" value={{kundenNachname}} required/>
+    <br/>
+    <br/>
+    <label for="geschlecht">Geschlecht:</label><br/>
+    <select id="geschlecht" name="geschlecht" required>
+        <option value="" selected disabled hidden>Bitte auswählen</option>
+        <option value="männlich">Männlich</option>
+        <option value="weiblich">Weiblich</option>
+    </select><br/>
+    <br/>
+    <label for="geburtsdatum">Geburtsdatum: </label><br/>
+    <input type="date" id="geburtsdatum" name="geburtsdatum" value={{kundenGeburtsdatum}} required/>
+    <br/>
+    <br/>
+    <label for="vip">VIP:</label><br/>
+    <select id="vip" name="vip" required>
+        <option value="" selected disabled hidden>Bitte auswählen</option>
+        <option value="true">Ja</option>
+        <option value="false">Nein</option>
+    </select><br/>
+    <br/>
+    <input class="button" type="submit" value="submit"/>
+</form>
+</div>
+</body>
+</html>

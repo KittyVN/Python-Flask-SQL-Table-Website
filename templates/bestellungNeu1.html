@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestellung bearbeiten</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Datenset bearbeiten</h1>
+<form action="/bestellungen" method="post">
+    <label for="ID">ID: </label><br/>
+    <input type="text" id="ID" name="ID" value={{bestellungID}} readonly />
+    <br/>
+    <br/>
+    <label for="menge">Menge: </label><br/>
+    <input type="number" name="menge" id="menge" min="0" max="10000" step="1" value={{bestellungMenge}} required/>
+    <br/>
+    <br/>
+    <label for="kunID">KundeID: </label><br/>
+    <!--<input type="text" id="kunID" name="kunID" value={{bestellungKun}} />-->
+    <select name="kunID" id="kunID" required>
+              {% for o in kunden %}
+              <option value="{{ o }}" {% if o==bestellungKun %} selected {% endif %}>{{ o }}</option>
+              {% endfor %}
+    </select>
+    <br/>
+    <br/>
+    <label for="proID">ProduktID: </label><br/>
+    <!--<input type="text" id="proID" name="proID" value={{bestellungPro}} />-->
+    <select name="proID" id="proID"  required>
+              {% for o in produkte %}
+              <option value="{{ o }}" {% if o==bestellungPro %} selected {% endif %}>{{ o }}</option>
+              {% endfor %}
+    </select>
+    <br/>
+    <br/>
+    <input class="button" type="submit" value="submit"/>
+</form>
+</div>
+</body>
+</html>

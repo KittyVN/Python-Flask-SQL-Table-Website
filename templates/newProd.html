@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neues Produkt</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Neues Datenset einfügen</h1>
+<form action="/produkte" method="post">
+    <label for="bezeichnung">Bezeichnung: </label><br/>
+    <input type="text" id="bezeichnung" name="bezeichnung" required/>
+    <br/>
+    <br/>
+    <label for="kosten">Kosten: </label><br/>
+    <input type="number" name="kosten" id="kosten" min="0" max="10000" step="0.01" required />
+    <br/>
+    <br/>
+    <input class="button" type="submit" value="submit"/>
+</form>
+</div>
+</body>
+</html>
